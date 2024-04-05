@@ -1,4 +1,5 @@
 # School-Stage - кружок актерского мастерства
+![image](https://github.com/KarinaKasha/School-Stage/assets/163593209/b9693a36-3609-48cd-9f46-eb262a8d542a)
 1. Общая информация (Кашафутдинова Карина)
    - информация о кружке
    - педагоги
