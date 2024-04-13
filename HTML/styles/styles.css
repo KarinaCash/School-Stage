@@ -11,14 +11,14 @@
     font-weight: 800;
     font-style: normal;
   }
-  
+
 body {
     font-family: "Montserrat", sans-serif;
     font-size: 16px;
     line-height: 24px;
     color: #000000;
     background-color:#FFFFFF;
-  }
+}
   .main-osn{
     font-family: "Montserrat", sans-serif;
     color: #F5E52D;
@@ -53,12 +53,22 @@ body {
     text-decoration: none;
     text-transform: uppercase;
   }
-  .main-glavnoe{
+  .main-osn{
     color: #F5E52D;
     background-color: #FFFFFF;
     background-image: url("images/osn.jpg");
-    background-size: weight="1400" height="798";
+    width: 1400px;height: 798px;
     background-repeat: no-repeat;
   }
 
-  
+ .logo{
+  border-radius: 320px;
+  width: 65px;
+  height: 66px;
+ }
+ .main-index{
+  background-image: url("images/bg.png");
+    width: 1400px;
+    height: 798px;
+    background-repeat: no-repeat;
+ }
