@@ -1,0 +1,64 @@
+
+.montserrat-osn {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+  }
+.montserrat-bold {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+  }
+  
+body {
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    color: #000000;
+    background-color:#FFFFFF;
+  }
+  .main-osn{
+    font-family: "Montserrat", sans-serif;
+    color: #F5E52D;
+    background-color:#FFFFFF;
+  }
+  .button {
+    font-family: inherit;
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: 700;
+    text-align: center;
+    color: #000000;
+    background-color: #FFFFFF;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+  
+  /* Pages */
+  
+  .page-header {
+    color:#000000;
+    background: #FFFFFF;
+  }
+  
+  .navigation-link {
+    font-family: "Montserrat", sans-serif;
+    line-height: 22px;
+    font-weight: 700;
+    text-align: center;
+    color: #000000;
+    background-color: #FFFFFF;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+  .main-glavnoe{
+    color: #F5E52D;
+    background-color: #FFFFFF;
+    background-image: url("images/osn.jpg");
+    background-size: weight="1400" height="798";
+    background-repeat: no-repeat;
+  }
+
+  
