@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/style_main.css">
+    <link rel="icon" href="images/logo.png">
   </head>
   <body>
     
@@ -80,15 +81,20 @@
           </div>
 
           <div class="form_input">
-          <form id="sending" action="#.php" method="post">
+          <form id="form" name="form" action="https://script.google.com/macros/s/AKfycbwMzudZ9-jUht5FnMCKeC0R3B7BEZPskDWRezOVF0r3zTQagl_8jIj4WR8_3-YSlH9V/exec" method="post">
                       
-            <div class="blocks"><input class="field" type="text" autocomplete="on" name="appointment-name" placeholder="ВАШЕ ИМЯ" required></div>
+            <div class="blocks">
+              <input class="field" type="text" name="name" value="" placeholder="ВАШЕ ИМЯ" required>
+            </div>
 
-            <div class="blocks"><input class="field" type="text" autocomplete="on" name="appointment-form-phone" placeholder="+7 (___) ___-__-__" required></div>
+            <div class="blocks">
+              <input class="field" type="tel"  name="phone" value="" placeholder="+7 (___) ___-__-__" required>
+            </div>
+
+            <button id="button" type="submit" name ="submitForm" class="btn btn-submit">Оставить заявку на сайте</button>
 
           </form>
 
-          <button id="button" form="sending" type="submit">Оставить заявку на сайте</button>
           </div>
 
         </div>
@@ -138,17 +144,83 @@
   </div>
 
   <!-- Модальное окно -->
-  <div class="mod">
+  <!--<div class="mod">
     <div class="mod__content">
       <button class="mod__close-button"><img src="images/x.png" width="18" alt=""></button>
-    <!-- Контент модального окна -->
+    
       <h1 class="mod__title">Упс, что-то не так.</h1>
       <p class="mod__description">Заполните формы.</p>
     </div>
-  </div>
+  </div>-->
+  <script>
+    const URL_APP ="https://script.google.com/macros/s/AKfycbwMzudZ9-jUht5FnMCKeC0R3B7BEZPskDWRezOVF0r3zTQagl_8jIj4WR8_3-YSlH9V/exec";
+
+  
+    const form = document.querySelector("#form");
+
+    form.action = URL_APP;
+
+    function isFilled(details) {
+    const { name, phone } = details;
+    if (!name) return false;
+    if (!phone) return false;
+    return true;
+    }
+
+    form.addEventListener("btn-submit", async (ev) => {
+    
+    ev.preventDefault();
+    
+    const name = document.querySelector("[name=name]");
+    const phone = document.querySelector("[name=phone]");
+    
+
+    let details = {
+        name: name.value.trim(),
+        phone: phone.value.trim(),
+    };
+
+    if (!isFilled(details)) return;
+
+    let formBody = [];
+    for (let property in details) {
+        let encodedKey = encodeURIComponent(property);
+        let encodedValue = encodeURIComponent(details[property]);
+        formBody.push(encodedKey + "=" + encodedValue);
+    }
+  
+    formBody = formBody.join("&");
+
+    async function submitForm() {
+    try {
+    const result = await fetch(URL_APP, { 
+        method: "POST", 
+        headers: {
+        "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
+        },
+        mode: "cors",
+        body: formBody,
+    });
+    const data = await result.json();
+
+    if (data.type === 'success') {
+        alert('Спасибо за заявку!')
+    } else if (data.type === 'error') {
+        alert('Ошибка!')
+    }
+}  
+    catch (error) {
+    alert("Ошибка!");
+    console.error(error);
+}
+}
+document.getElementById("form").addEventListener("submit", submitForm);             
+    });
+</script>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="js/main.js"></script>
 
+  
   </body>
 </html>
