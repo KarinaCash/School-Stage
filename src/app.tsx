@@ -1,8 +1,13 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
+
+import { PageRoutes } from './routes';
 
 const App = () => {
   return (
-    <h1>Hello world для проекта - school-stage</h1>
+    <BrowserRouter>
+        <PageRoutes/>
+    </BrowserRouter>
   );
 };
 

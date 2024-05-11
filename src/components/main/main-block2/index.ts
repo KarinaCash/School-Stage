@@ -1,0 +1,1 @@
+export {Block2} from './main-block2'

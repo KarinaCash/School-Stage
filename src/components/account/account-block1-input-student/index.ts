@@ -1,0 +1,1 @@
+export {Input} from './account-block1-input-student'

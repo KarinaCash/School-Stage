@@ -1,0 +1,1 @@
+export {Block_vert} from './main-block-text-vertical'
