@@ -8,7 +8,9 @@
         "start": "ijl-cli server --port=8099 --with-open-browser",
         "build": "npm run clean && ijl-cli build --dev",
         "build:prod": "npm run clean && ijl-cli build",
-        "eslint": "npx eslint src"
+        "clean": "rimraf dist",
+        "eslint": "npx eslint src",
+        "lint": "eslint ."
     },
     "keywords": [],
     "author": "",
