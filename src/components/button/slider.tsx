@@ -13,7 +13,7 @@ const CustomNextArrow = (props) => {
     const { className, onClick } = props;
     return (
         <button className={className} onClick={onClick}>
-            &rarr; {/* Стрелка "вперед" */}
+            &rarr; {/* Стрелка "Вперед" */}
         </button>
     );
 };
