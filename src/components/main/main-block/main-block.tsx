@@ -16,6 +16,6 @@ export const Block = () =>(
           <Text>Школа актерского мастерства School Stage</Text>
           <Sign>для детей от 7 до 14 лет</Sign>
           <Abutton><Butlink>Оставить заявку</Butlink></Abutton>
-        </Block11>      
+        </Block11>
     </Block1>
 )

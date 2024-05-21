@@ -1,1 +1,1 @@
-export {Nav} from './main-header-nav'
+export { default as Nav } from './main-header-nav';
