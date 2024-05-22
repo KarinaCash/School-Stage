@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Info,
   Logo,
@@ -32,6 +32,16 @@ export const Header = (props) => {
   const prevSlide = () => {
     setCurrentSlide((prevSlide) => (prevSlide - 1 + images.length) % images.length);
   };
+  const [teachersData, setTeachersData] = useState([])
+  useEffect(() => {
+    fetch('/api/teachers')
+    .then(response => response.json())
+    .then(data => {
+      setTeachersData(data.data);
+      console.log(data.data)
+    })
+  }, [])
+  
 
   return (
     <Header1>
