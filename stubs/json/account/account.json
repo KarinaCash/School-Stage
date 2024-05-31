@@ -2,6 +2,7 @@
     "data": [
       {
         "login": "user1",
+        "password": "123",
         "photo": "boy",
         "surname": "Иванов",
         "name": "Иван",
@@ -13,6 +14,7 @@
       },
       {
         "login": "user2",
+        "password": "123",
         "photo": "boy",
         "surname": "Александров",
         "name": "Александр",
