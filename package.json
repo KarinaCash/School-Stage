@@ -9,7 +9,7 @@
         "build": "npm run clean && ijl-cli build --dev",
         "build:prod": "npm run clean && ijl-cli build",
         "clean": "rimraf dist",
-        "eslint": "npx lint src"
+        "eslint": "npx eslint src"
     },
     "keywords": [],
     "author": "",
