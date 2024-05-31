@@ -87,31 +87,32 @@ const Login: React.FC<LoginProps> = ({ show, onClose }) => {
   const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate(); 
-  const [itemdata, setData] = useState([]);
-
+  const [userData, setUserData] = useState(null);
   useEffect(() => {
-    fetch(getConfigValue("school-stage.api") + '/account')
-      .then(response => response.json())
-      .then(itemdata =>{
-        setData(itemdata.data)
-      })
-      .catch(error => {
-        console.error('Error fetching catalog data:', error);
-      });
-  }, []); 
+    if (userData !=null) {
+      navigate(URLs.ui.account.getUrl(userData.login))
+    }
+  },[userData]);
+  
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const el = itemdata.map((element) => {
-      if (element.login === login && element.password === password)
-        return element;
-      else return null;
-    }).filter(Boolean)
-    if (el[0]) {
-      navigate(URLs.ui.account.getUrl(el[0].login))
-    } else {
-      alert('Неверный логин или пароль');
+    fetch(getConfigValue("school-stage.api") + '/login',{
+      method:"post", 
+      "headers":{
+        "Content-Type":"application/json"
+      },
+      
+      body: JSON.stringify({
+        login: login,
+        password
+      })
     }
+  )
+  .then(response => response.json())
+  .then(itemdata =>{
+    setUserData(itemdata.data)
+  })
   };
 
   return (

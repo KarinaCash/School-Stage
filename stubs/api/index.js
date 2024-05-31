@@ -9,3 +9,7 @@ router.get('/teachers', (request, response) => {
 router.get('/account', (request, response) => {
   response.send(require('../json/account/account.json'))
 })
+
+router.post('/login', (request, response) => {
+  response.send(require('../json/login/success.json'))
+})
