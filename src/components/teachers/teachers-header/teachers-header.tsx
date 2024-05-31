@@ -17,7 +17,7 @@ import { Link } from "../../all/all-link";
 import prevArrow from "../../../assets/images/ykaz_left.png";
 import nextArrow from "../../../assets/images/ykaz_right.png";
 
-export const Header = (props) => {
+export const Header = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const images = [

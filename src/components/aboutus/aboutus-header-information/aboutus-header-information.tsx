@@ -5,7 +5,7 @@ import {
   Text
 } from "./aboutus-header-information.style";
 
-export const Information = (props) =>(    
+export const Information = () =>(    
   <Information1>
       <Text>
         <h2 >О нас</h2>

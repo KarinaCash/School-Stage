@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 const pkg = require('./package')
 
 module.exports = {
@@ -9,7 +10,10 @@ module.exports = {
   },
   /* use https://kc.admin.inno-js.ru/ to create config, navigations and features */
   navigations: {
-    'school-stage.main': '/school-stage'
+    'school-stage.main': '/school-stage',
+    "school-stage.about": "/about",
+    "school-stage.account.login": "/account/:login",
+    "school-stage.teachers": "/teachers"
   },
   features: {
     'school-stage': {
@@ -17,6 +21,6 @@ module.exports = {
     },
   },
   config: {
-    key: 'value'
+    "school-stage.api": "/api"
   }
 }

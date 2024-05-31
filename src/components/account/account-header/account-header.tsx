@@ -12,7 +12,7 @@ import { landing } from "../../../assets/images";
 import { Link } from "../../all/all-link";
 
 
-export const Header = (props) =>(    
+export const Header = () =>(    
     <Hat>
         <Hat_1>
             <Logo src={landing['logo1']} alt="Логотип School Stage"/>

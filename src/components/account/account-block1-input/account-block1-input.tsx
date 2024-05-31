@@ -8,15 +8,15 @@ import {
 } from "./account-block1-input.style";
 import { Input } from "../account-block1-input-student";
 
-export const InputAll = () =>(
+export const InputAll = ({props}) =>(
     <Block2>
               <Block3>
-                <Input text = "Фамилия:" label = "фамилия" value = "Иванов"/>
-                <Input text = "Имя:" label = "имя" value = "Иван"/>
-                <Input text = "Класс:" label = "класс" value = "2"/>
-                <Input text = "Группа:" label = "группа" value = "1"/>           
+                <Input text = "Фамилия:" label = "фамилия" value = {props.surname}/>
+                <Input text = "Имя:" label = "имя" value = {props.name}/>
+                <Input text = "Класс:" label = "класс" value = {props.class}/>
+                <Input text = "Группа:" label = "группа" value = {props.group}/>           
               </Block3>
-              <Block4><label htmlFor="родтел">Номер телефона родителя:</label><Input1 type="text" name="###" value="+7 927 030 13 00"/></Block4>
-              <Block4><label htmlFor="педагог">Педагог:</label><Input1 type="text" name="###" value="Иванова Валерия Константиновна"/></Block4>
+              <Block4><label htmlFor="родтел">Номер телефона родителя:</label><Input1 type="text" name="###" value={props.number}/></Block4>
+              <Block4><label htmlFor="педагог">Педагог:</label><Input1 type="text" name="###" value={props.teacher}/></Block4>
     </Block2>
 )

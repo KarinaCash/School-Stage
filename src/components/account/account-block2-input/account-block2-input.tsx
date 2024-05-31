@@ -5,10 +5,10 @@ import {
     Input3
 } from "./account-block2-input.style";
 
-export const Input = ({ 
-    value
-}) =>(
+export const Input = (
+    {props}
+) => (
     <B>
-        <Input3 type="text" name="###" value={value}/>
+        <Input3 type="text" name="###" value={props}/>
     </B>
 )

@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components'; 
 import { useNavigate } from 'react-router-dom'; // Import useNavigate hook
+import { getConfigValue } from '@ijl/cli';
+import { URLs } from '../../../__data__/urls';
 
 // Define styled components
 const LoginContainer = styled.div`
@@ -85,11 +87,28 @@ const Login: React.FC<LoginProps> = ({ show, onClose }) => {
   const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate(); 
+  const [itemdata, setData] = useState([]);
+
+  useEffect(() => {
+    fetch(getConfigValue("school-stage.api") + '/account')
+      .then(response => response.json())
+      .then(itemdata =>{
+        setData(itemdata.data)
+      })
+      .catch(error => {
+        console.error('Error fetching catalog data:', error);
+      });
+  }, []); 
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    if (login === 'user' && password === '123') {
-      navigate('/school-stage/account'); 
+    const el = itemdata.map((element) => {
+      if (element.login === login && element.password === password)
+        return element;
+      else return null;
+    }).filter(Boolean)
+    if (el[0]) {
+      navigate(URLs.ui.account.getUrl(el[0].login))
     } else {
       alert('Неверный логин или пароль');
     }

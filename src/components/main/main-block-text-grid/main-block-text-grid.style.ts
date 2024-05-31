@@ -1,4 +1,3 @@
-import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 
 export const Divtxt = styled.div <{area: any}>`
@@ -11,10 +10,5 @@ export const Divtxt = styled.div <{area: any}>`
     display: flex;
     justify-content: center;
     align-items: center;
-    ${props => {
-        return css`
-        flex-direction: {props.area};
-        `;
-    }}
     cursor: default;
 `;

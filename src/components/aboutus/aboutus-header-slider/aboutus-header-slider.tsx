@@ -9,7 +9,7 @@ import {
 } from "./aboutus-header-slider.style";
 import { landing } from "../../../assets/images";
 
-export const HeadSlider = (props) =>(    
+export const HeadSlider = () =>(    
     <div>
           <Slider>
             <div>

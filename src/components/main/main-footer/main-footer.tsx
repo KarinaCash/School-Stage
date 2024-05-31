@@ -11,7 +11,7 @@ import {
 } from "./main-footer.style";
 import { landing } from "../../../assets/images";
 
-export const Footer = (props) =>(    
+export const Footer = () =>(    
     <Pager>
         <Diver>
             <h3>Контакты:</h3>

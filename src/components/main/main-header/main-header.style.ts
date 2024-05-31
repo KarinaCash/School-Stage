@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import { back2 } from "../../../assets/images/landing";
 
 export const Hat =styled.div `
   background:black;
