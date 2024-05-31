@@ -35,10 +35,6 @@ export const Block2 = ({lessons}) =>  (
                     ))
                 }
       </Block2_1_3>
-      <Block2_1_4>
-          <label htmlFor="остаток">Остаток оплаченных занятий: </label>
-          <Input4 type="text" name="###" value="6"/>
-      </Block2_1_4>
     </Form2>
   </Block2_1>
 </Block_2>
