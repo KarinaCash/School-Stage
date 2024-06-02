@@ -88,31 +88,40 @@ const Login: React.FC<LoginProps> = ({ show, onClose }) => {
   const [password, setPassword] = useState('');
   const navigate = useNavigate(); 
   const [userData, setUserData] = useState(null);
+  
   useEffect(() => {
     if (userData !=null) {
-      navigate(URLs.ui.account.getUrl(userData.login))
+      navigate(URLs.ui.account.getUrl(userData))
     }
   },[userData]);
   
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    fetch(getConfigValue("school-stage.api") + '/login',{
-      method:"post", 
-      "headers":{
-        "Content-Type":"application/json"
-      },
-      
-      body: JSON.stringify({
-        login: login,
-        password
+      event.preventDefault();
+      fetch(getConfigValue("school-stage.api") + '/login',{
+          method:"POST", 
+          "headers":{
+            "Content-Type":"application/json"
+          },
+          
+          body: JSON.stringify({
+            login: login,
+            password: password
+          })
+        }
+      )
+      .then(response =>{
+        if (!response.ok) {
+          return response.text().then((errorMessage) => {
+              alert(errorMessage);
+              throw new Error(errorMessage);
+          });
+        }
+        return response.json();
       })
-    }
-  )
-  .then(response => response.json())
-  .then(itemdata =>{
-    setUserData(itemdata.data)
-  })
+      .then(itemdata =>{
+        setUserData(itemdata.login)
+      })
   };
 
   return (
