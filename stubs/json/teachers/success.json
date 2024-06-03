@@ -1,10 +1,6 @@
 {
-    "data": [
+    "data": 
       {
-        "imageUrl": "teacher1"
-      },
-      {
-        "imageUrl": "teacher2"
+        "imageUrl": ["teacher1", "teacher2"]
       }
-    ]
   }

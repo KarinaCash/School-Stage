@@ -37,9 +37,9 @@ export const Header = () => {
     fetch(`${URLs.api.main}/teachers`)
     .then(response => response.json())
     .then(data => {
-      setTeachersData(data.data);
-      console.log(data.data)
-    }).catch((error) => console.log(error))
+      setTeachersData(data.data.imageUrl);
+      console.log(data.data.imageUrl)
+    }).catch(error => {console.log(error)});
   }, [])
   
 
@@ -59,7 +59,7 @@ export const Header = () => {
       <Slider>
         <PrevButton onClick={prevSlide}><img src={prevArrow} alt="Previous" /></PrevButton>
         <Image>
-          <Art><Im src={landing[images[currentSlide]]} alt={`Teacher ${currentSlide + 1}`} /></Art>
+          <Art><Im src={landing[teachersData[currentSlide]]} alt={`Teacher ${currentSlide + 1}`} /></Art>
         </Image>
         <NextButton onClick={nextSlide}><img src={nextArrow} alt="Next" /></NextButton>
       </Slider>
