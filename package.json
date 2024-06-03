@@ -1,6 +1,6 @@
 {
     "name": "school-stage",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "description": "<img src=https://github.com/KarinaKasha/School-Stage/assets/163593209/b9693a36-3609-48cd-9f46-eb262a8d542a>",
     "main": "./src/index.tsx",
     "scripts": {
