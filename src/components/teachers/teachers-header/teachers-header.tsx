@@ -9,7 +9,9 @@ import {
   Image,
   Im,
   PrevButton,
-  NextButton
+  NextButton,
+  DivTXT,
+  DivNAME,
 } from "./teachers-header.style";
 import { landing } from "../../../assets/images";
 import { Link } from "../../all/all-link";
@@ -42,11 +44,11 @@ export const Header = () => {
         }
         return response.json()})
     .then(data => {
-      setTeachersData(data.data.imageUrl);
-      console.log(data.data.imageUrl)
+      setTeachersData(data.data);
     }).catch(error => {console.log(error)});
   }, [])
   
+  console.log(teachersData);
 
   return (
     <Header1>
@@ -63,9 +65,15 @@ export const Header = () => {
       </Info>
       <Slider>
         <PrevButton onClick={prevSlide}><img src={prevArrow} alt="Previous" /></PrevButton>
+        {
+          teachersData[currentSlide] && (
         <Image>
-          <Art><Im src={landing[teachersData[currentSlide]]} alt={`Teacher ${currentSlide + 1}`} /></Art>
+            <Art><Im src={landing[teachersData[currentSlide].imageUrl]} alt={`Teacher ${currentSlide + 1}`} /></Art>
+            <DivNAME>{teachersData[currentSlide].name}</DivNAME>
+            <DivTXT>{teachersData[currentSlide].status}</DivTXT>
         </Image>
+          )
+        }
         <NextButton onClick={nextSlide}><img src={nextArrow} alt="Next" /></NextButton>
       </Slider>
     </Header1>

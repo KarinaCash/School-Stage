@@ -60,16 +60,19 @@ export const Art = styled.div`
 `;
 
 export const Image = styled.div`
+  background-color: yellow;
   margin: 20px 0;
-  width: 100%;
-  height: auto;
+  width: 335px;
+  height: 800px;
+  border-radius: 7px;
   opacity: 0; /* Начальная прозрачность */
   animation: ${fadeIn} 0.5s ease forwards; /* Анимация появления */
 `;
 
 export const Im = styled.img`
-  width: 100%;
-  height: 800px; /* Adjusted height */
+  margin-top:30px;
+  width: 250px;
+  height: 400px; 
   border-radius: 7px;
 `;
 
@@ -90,6 +93,19 @@ export const Button = styled.button`
     outline: none;
   }
 `;
+
+export const DivNAME = styled.div`
+  margin: 30px 20px 0px 20px;
+  font-family: "Montserrat", sans-serif;
+  font-size:30px;
+  font-weight:bold;
+`
+export const DivTXT = styled.div`
+  margin: 30px 20px 0px 20px;
+  font-family: "Montserrat", sans-serif;
+  font-size:24px;
+  font-weight:normal;
+`
 
 export const PrevButton = styled(Button)`
   margin-right: 10px;

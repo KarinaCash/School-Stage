@@ -16,7 +16,7 @@ router.post('/login', (request, response) => {
 const router = require('express').Router();
 
 router.get('/teachers', (request, response) => {
-    response.status(500).send(require('../json/teachers/error.json'))
+    response.send(require('../json/teachers/success.json'))
   })
 
 router.get('/account', (request, response) => {

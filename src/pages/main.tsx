@@ -4,7 +4,6 @@ import { Header } from "../components/main/main-header";
 import { Footer } from "../components/main/main-footer";
 import { Block123 } from "../components/main/block123";
 import { Block } from "../components/main/main-block";
-import './style_main.css'
 
 const Main = () => {
   return (
