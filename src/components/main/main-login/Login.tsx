@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import styled from 'styled-components'; 
+import styled from '@emotion/styled'; 
 import { useNavigate } from 'react-router-dom'; // Import useNavigate hook
 import { getConfigValue } from '@ijl/cli';
 import { URLs } from '../../../__data__/urls';

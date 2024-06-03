@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ThemeProvider } from "styled-components";
+import { ThemeProvider } from "@emotion/react";
 import { Hat, Logo } from "./main-header.style";
 import { landing } from "../../../assets/images";
 import Nav from "../main-header-nav/main-header-nav";
@@ -21,14 +21,12 @@ export const Header: React.FC<HeaderProps> = () => {
 
   return (
     <ThemeProvider theme={{ showOverlay: isLoginVisible }}>
-      <>
         <Hat>
           <Logo src={landing["logo1"]} alt="Логотип School Stage" />
           <Nav onLoginClick={handleLoginClick} />
         </Hat>
         <BackgroundOverlay show={isLoginVisible} />
         <Login show={isLoginVisible} onClose={handleClose} />
-      </>
     </ThemeProvider>
   );
 };

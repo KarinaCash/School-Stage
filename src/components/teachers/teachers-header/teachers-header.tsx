@@ -13,7 +13,7 @@ import {
 } from "./teachers-header.style";
 import { landing } from "../../../assets/images";
 import { Link } from "../../all/all-link";
-
+import { URLs } from "../../../../src/__data__/urls"
 import prevArrow from "../../../assets/images/ykaz_left.png";
 import nextArrow from "../../../assets/images/ykaz_right.png";
 
@@ -34,12 +34,12 @@ export const Header = () => {
   };
   const [teachersData, setTeachersData] = useState([])
   useEffect(() => {
-    fetch('/api/teachers')
+    fetch(`${URLs.api.main}/teachers`)
     .then(response => response.json())
     .then(data => {
       setTeachersData(data.data);
       console.log(data.data)
-    })
+    }).catch((error) => console.log(error))
   }, [])
   
 
@@ -59,7 +59,7 @@ export const Header = () => {
       <Slider>
         <PrevButton onClick={prevSlide}><img src={prevArrow} alt="Previous" /></PrevButton>
         <Image>
-          <Art><Im src={images[currentSlide]} alt={`Teacher ${currentSlide + 1}`} /></Art>
+          <Art><Im src={landing[images[currentSlide]]} alt={`Teacher ${currentSlide + 1}`} /></Art>
         </Image>
         <NextButton onClick={nextSlide}><img src={nextArrow} alt="Next" /></NextButton>
       </Slider>
