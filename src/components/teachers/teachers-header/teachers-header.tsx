@@ -35,7 +35,12 @@ export const Header = () => {
   const [teachersData, setTeachersData] = useState([])
   useEffect(() => {
     fetch(`${URLs.api.main}/teachers`)
-    .then(response => response.json())
+    .then(response =>
+      {
+        if (!response.ok) {
+          throw new Error(response.statusText);
+        }
+        return response.json()})
     .then(data => {
       setTeachersData(data.data.imageUrl);
       console.log(data.data.imageUrl)
