@@ -10,8 +10,8 @@ import { URLs } from './__data__/urls';
 export const PageRoutes = () =>(
     <Routes>
         <Route path ={URLs.baseUrl} element={<Main/>} />
-        <Route path ={URLs.teachers} element={<Teachers/>} />
-        <Route path ={URLs.about} element={<Aboutus/>} />
+        {URLs.teachers && <Route path ={URLs.teachers} element={<Teachers/>} />}
+        {URLs.about && <Route path ={URLs.about} element={<Aboutus/>} />}
         <Route path ={URLs.ui.account.url} element={<Account/>} />
 
         <Route path="*" element={<h1>Page not found</h1>} />
