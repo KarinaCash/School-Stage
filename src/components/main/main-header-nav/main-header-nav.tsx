@@ -9,7 +9,7 @@ interface NavProps {
 
 const Nav: React.FC<NavProps> = ({ onLoginClick }) => ( // Принимаем функцию onLoginClick как пропс
   <Nav1>
-    {URLs.about && <Link href={URLs.teachers}>
+    {URLs.about && <Link href={URLs.about}>
       <Navigation>О нас</Navigation>
     </Link>}
     {URLs.teachers && <Link href={URLs.teachers}>
