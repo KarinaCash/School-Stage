@@ -9,10 +9,10 @@ interface NavProps {
 
 const Nav: React.FC<NavProps> = ({ onLoginClick }) => ( // Принимаем функцию onLoginClick как пропс
   <Nav1>
-    {URLs.about && <Link href="/school-stage/about">
+    {URLs.about && <Link href={URLs.teachers}>
       <Navigation>О нас</Navigation>
     </Link>}
-    {URLs.teachers && <Link href="/school-stage/teachers">
+    {URLs.teachers && <Link href={URLs.teachers}>
       <Navigation>Педагоги</Navigation>
     </Link>}
     <Navigation1 onClick={onLoginClick}>Кабинет</Navigation1> {/* Вызываем функцию onLoginClick при клике на "Кабинет" */}
